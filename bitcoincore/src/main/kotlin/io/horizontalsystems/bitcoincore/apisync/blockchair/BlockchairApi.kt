@@ -15,7 +15,7 @@ import java.util.TimeZone
 class BlockchairApi(
     private val chainId: String,
 ) {
-    private val apiManager = ApiManager("https://api.blocksdecoded.com/v1/blockchair")
+    private val apiManager = ApiManager("https://api-dev.blocksdecoded.com/v1/blockchair")
     private val limit = 10000
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
