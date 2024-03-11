@@ -1,5 +1,6 @@
 package io.horizontalsystems.bitcoincore.apisync.blockchair
 
+import android.util.Log
 import io.horizontalsystems.bitcoincore.apisync.model.AddressItem
 import io.horizontalsystems.bitcoincore.apisync.model.BlockHeaderItem
 import io.horizontalsystems.bitcoincore.apisync.model.TransactionItem
@@ -119,6 +120,7 @@ class BlockchairApi(
                 )
             }
         } catch (http404Exception: ApiManagerException.Http404Exception) {
+            Log.e("BLOCKCHAIR", "fetchTransactions: ", )
             return Pair(emptyList(), emptyList())
         }
     }
@@ -147,6 +149,7 @@ class BlockchairApi(
             }
             return map
         } catch (http404Exception: ApiManagerException.Http404Exception) {
+            Log.e("BLOCKCHAIR", "fetchBlockHashes: ", http404Exception )
             return emptyMap()
         }
     }
